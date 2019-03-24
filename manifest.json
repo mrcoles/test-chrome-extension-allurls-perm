@@ -1,0 +1,12 @@
+{
+  "name": "test-chrome-extension-allurls-perm",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Test of the chrome.permissions.request of <all_urls>",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "minimum_chrome_version": "70",
+  "permissions": [],
+  "optional_permissions": ["<all_urls>"]
+}

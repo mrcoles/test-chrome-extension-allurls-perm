@@ -4,6 +4,8 @@ This demos an issue with the `chrome.permissions.request` and `chrome.permission
 
 Pack this extension locally and then add it to chrome://extensions to test it out. Alternatively, load it as an unpacked extension to see it work fine in that environment.
 
+It seems this is tied to the check against `<all_urls>` requiring file scheme access to be enabled in order for it to return `true`.
+
 Test on:
 
 - Mac OSX 10.13.6

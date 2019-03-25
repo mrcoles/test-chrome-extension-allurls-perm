@@ -5,26 +5,35 @@
     <title>Download Test</title>
     <style>
       #content { max-width: 800px; margin: 3em auto; padding: 0 15px; }
+      textarea,
       body { color: #333; font: normal 16px/24px helvetica; }
       h3, p { margin-bottom: 24px; }
+      textarea { box-sizing: border-box; width: 100%; }
     </style>
   </head>
   <body>
     <div id="content">
       <h3>Request &lt;all_urls&gt; permission test</h3>
       <p>
-        This page shows the results of requesting and checking the permission:
-        <code style="white-space: nowrap">PERMS = { origins: ['&lt;all_urls&gt;'] }</code>:
+        This page shows the results of requesting and checking the following permissions.
+        <br /><br />
+        request permission:<br />
+        <textarea id="perm-req-json">{ "origins": ["&lt;all_urls&gt;"] }</textarea>
+        <br /><br />
+        contains permission:<br />
+        <textarea id="perm-contains-json">{ "origins": ["&lt;all_urls&gt;"] }</textarea>
       </p>
       <p>
         Click on this button to make the request:
         <button id="req" type="button">Request Perm</button>
       </p>
       <p>
-        Result of <code>chrome.permissions.request(PERMS, ...)</code>:
-        <strong id="req-result">NOT_REQUESTED_YET</strong>
+        Result of <code>chrome.permissions.request(<span id="req-result-perms"></span>, ...)</code>:
         <br />
-        Result of <code>chrome.permissions.contains(PERMS, ...)</code>:
+        <strong id="req-result">NOT_REQUESTED_YET</strong>
+        <br /><br />
+        Result of <code>chrome.permissions.contains(<span id="con-result-perms"></span>, ...)</code>:
+        <br />
         <strong id="contains-result"></strong>
       </p>
     </div>
